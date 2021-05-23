@@ -1,6 +1,6 @@
 
 const addValue = document.querySelector('[data-action="increment"]');
-const removeValue = document.querySelector('[data-action="decrement"');
+const removeValue = document.querySelector('[data-action="decrement"]');
 const value = document.querySelector('#value');
 
 let counterValue = 0
