@@ -16,30 +16,53 @@ const images = [
     },
   ];
 
+  
   const imgListEl = document.querySelector('.img-list');
-
-//   const imgItemEl = document.createElement('li');
-//   imgItemEl.classList.add('img-item')
-//   const imgEl = document.createElement('img');
-//   imgItemEl.classList.add('img-link');
-
-  const makeImgCart = ({url, alt}) =>{
-    const imgItemEl = document.createElement('li');
-    imgItemEl.classList.add('img-item')
-    const imgEl = document.createElement('img');
-    imgEl.classList.add('img-link');
-    imgEl.src = url;
-    imgEl.alt = alt;
-
-    imgItemEl.append(imgEl);
-
-    return imgItemEl;
+  imgListEl.insertAdjacentHTML('beforeend', makeImgCart(images))
+  
+  
+  function makeImgCart(images) {
+    return images.map(({url, alt}) => {
+      return `<li><img src="${url}" alt="${alt}>"</li>`
+    }).join('')
   };
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+//   const imgListEl = document.querySelector('.img-list');
 
-//   console.log(makeImgCart(images[0]));
+//   const makeImgCart = ({url, alt}) =>{
+//     const imgItemEl = document.createElement('li');
+//     imgItemEl.classList.add('img-item')
+//     const imgEl = document.createElement('img');
+//     imgEl.classList.add('img-link');
+//     imgEl.src = url;
+//     imgEl.alt = alt;
 
-  const El = images.map(makeImgCart);
+//     imgItemEl.append(imgEl);
+//     return imgItemEl;
+//   };
 
-//   console.log(El);
+// //   console.log(makeImgCart(images[0]));
 
-  imgListEl.append(...El);
+//   const El = images.map(makeImgCart);
+
+// //   console.log(El);
+
+//   imgListEl.append(...El);
